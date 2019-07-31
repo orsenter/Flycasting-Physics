@@ -141,7 +141,7 @@ for D in Ds:
     print()
 
 i = 0
-plt.figure(1)
+plt.figure(1, figsize=(10,10))
 ylims = [(12.0, 15.0), (13.5, 15.0), (14.0, 15.5), (14.0, 17.0), (10, 30)]
 for sp in [321, 322, 323, 324, 325]:
     plt.subplot(sp)
@@ -152,4 +152,4 @@ for sp in [321, 322, 323, 324, 325]:
     plt.xlabel("Fly Displacement [m]")
     plt.ylabel("Fly Velocity [m/s]")
     i += 1
-plt.show()
+plt.savefig("velocity_histories.png", dpi=300)
