@@ -35,7 +35,7 @@ v_n = v * math.sin(theta_rad) # is the flow velocity normal to the line
 
 rho_air = 1.204 # kg/m3, is the mass density of the fluid (air)
 # see https://www.engineersedge.com/physics/viscosity_of_air_dynamic_and_kinematic_14483.htm
-mu_air =  1.825e-6 # Pa.s, Dynamic Viscosity of Air @ 20°C
+mu_air =  1.825e-5 # Pa.s, Dynamic Viscosity of Air @ 20°C
 Cdn = 1.0 # Form drag coefficient
 Cdt = 0.005 # Skin friction coefficient
 
@@ -52,8 +52,8 @@ def computeReferenceAreas():
     
     # compute Reynolds Number
     # from https://en.wikipedia.org/wiki/Reynolds_number
-    Re_n = rho_air * v * d_line / mu_air
-    Re_t = rho_air * v * l_line / mu_air
+    Re_n = rho_air * v_n * d_line / mu_air
+    Re_t = rho_air * v_t * l_line / mu_air
     print("Reynolds Number Re (form drag) = {:.2e}".format(Re_n))
     print("Reynolds Number Re (skin friction) = {:.2e}".format(Re_t))
 
